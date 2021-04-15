@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23D75C7B47257670D4E49F4B /* Pods_RandomButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAECD5356BB8FE4B0AA677EC /* Pods_RandomButton.framework */; };
 		28F824F32624C12F00A27439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F824F22624C12F00A27439 /* AppDelegate.swift */; };
 		28F824F52624C12F00A27439 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F824F42624C12F00A27439 /* SceneDelegate.swift */; };
 		28F824F72624C12F00A27439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F824F62624C12F00A27439 /* ViewController.swift */; };
@@ -24,6 +25,9 @@
 		28F824FB2624C13000A27439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		28F824FE2624C13000A27439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		28F825002624C13000A27439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		33C38DB9D138BDF01A9FACC4 /* Pods-RandomButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomButton.release.xcconfig"; path = "Target Support Files/Pods-RandomButton/Pods-RandomButton.release.xcconfig"; sourceTree = "<group>"; };
+		581DB6C2F62377EFAC0E8B67 /* Pods-RandomButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RandomButton.debug.xcconfig"; path = "Target Support Files/Pods-RandomButton/Pods-RandomButton.debug.xcconfig"; sourceTree = "<group>"; };
+		BAECD5356BB8FE4B0AA677EC /* Pods_RandomButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RandomButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23D75C7B47257670D4E49F4B /* Pods_RandomButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				28F824F12624C12F00A27439 /* RandomButton */,
 				28F824F02624C12F00A27439 /* Products */,
+				DD3A5F228636733FCD4BDA7A /* Pods */,
+				8D97F2B6A36D4DDCDF0C366A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = RandomButton;
 			sourceTree = "<group>";
 		};
+		8D97F2B6A36D4DDCDF0C366A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BAECD5356BB8FE4B0AA677EC /* Pods_RandomButton.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD3A5F228636733FCD4BDA7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				581DB6C2F62377EFAC0E8B67 /* Pods-RandomButton.debug.xcconfig */,
+				33C38DB9D138BDF01A9FACC4 /* Pods-RandomButton.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 28F825032624C13000A27439 /* Build configuration list for PBXNativeTarget "RandomButton" */;
 			buildPhases = (
+				11AC15F0AB969C6A84F3311C /* [CP] Check Pods Manifest.lock */,
+				28F8250A2624CC8E00A27439 /* Run Script */,
 				28F824EB2624C12F00A27439 /* Sources */,
 				28F824EC2624C12F00A27439 /* Frameworks */,
 				28F824ED2624C12F00A27439 /* Resources */,
+				737DDC5080DBAB00EEE9BA1C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,66 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11AC15F0AB969C6A84F3311C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RandomButton-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		28F8250A2624CC8E00A27439 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		737DDC5080DBAB00EEE9BA1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RandomButton/Pods-RandomButton-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RandomButton/Pods-RandomButton-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RandomButton/Pods-RandomButton-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28F824EB2624C12F00A27439 /* Sources */ = {
@@ -283,12 +370,14 @@
 		};
 		28F825042624C13000A27439 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 581DB6C2F62377EFAC0E8B67 /* Pods-RandomButton.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6762K7P32G;
 				INFOPLIST_FILE = RandomButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,18 +385,20 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swamnxstudio.RandomButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		28F825052624C13000A27439 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33C38DB9D138BDF01A9FACC4 /* Pods-RandomButton.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6762K7P32G;
 				INFOPLIST_FILE = RandomButton/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.swamnxstudio.RandomButton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
